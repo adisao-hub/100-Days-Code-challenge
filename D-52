@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, x;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter sorted array elements: ");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter x: ");
+    scanf("%d", &x);
+
+    int ceilIndex = -1;
+
+    for(i = 0; i < n; i++) {
+        if(arr[i] >= x) {
+            ceilIndex = i;
+            break; // first occurrence
+        }
+    }
+
+    printf("Index of ceil of %d: %d\n", x, ceilIndex);
+
+    return 0;
+}
